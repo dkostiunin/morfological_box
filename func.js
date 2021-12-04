@@ -74,7 +74,7 @@ function get_result(el){
 			d.forEach(i=>{i.forEach((v,j)=>{i[j]={[key[j]]:v}})})
 			main_div.insertAdjacentHTML('beforeend',show_r)	
 			show_room.insertAdjacentHTML('beforeend',`<div class="rooms">Объект: <b>${base_inp.querySelector('input').value}</b></div>`)
-			d.forEach(i=>{			
+			d.forEach(i=>{
 				let str='',p
 				i.forEach(j=>{for(let k in j){str=str+` <b>${k}:</b> ${j[k]},`}})
 				p=`<div class="rooms">${str}
@@ -90,6 +90,8 @@ function get_result(el){
 		if(base_inp.querySelector('input').value){
 			key=key.flat().map((i,j)=>i={[i]:val[j]})
 			localStorage.setItem(base_inp.querySelector('input').value,JSON.stringify(key))
+			main_div.insertAdjacentHTML('beforeend',add_obj)
+			setTimeout(()=>{add_o.remove()},2000)
 		}
 		else{alert('Для начала добавьте объект')}
 	}
@@ -106,9 +108,9 @@ function comb(matrix){
 function closes(el){el.parentElement.remove();parent_input.style.display='block'}
 
 function show_menu(el){
-	main_div.insertAdjacentHTML('beforeend',menu)	
+	main_div.insertAdjacentHTML('beforeend',menu)
 	parent_input.style.display='none'
-	for(let i=0; i<localStorage.length; i++) {		
+	for(let i=0; i<localStorage.length; i++) {
 		let p=`<div class="save_data"><b>${localStorage.key(i)}</b>
 		<button onclick="edit_saves(this)">Посмотреть</button>
 		<button onclick="edit_saves(this)">Удалить</button>
@@ -122,19 +124,19 @@ function edit_saves(el){
 	if(el.textContent==='Посмотреть'){
 		let val=JSON.parse(localStorage.getItem(obj)).reverse()
 		let c=document.getElementById('child_input'); if(c){c.remove()}
-		el.parentElement.parentElement.remove();parent_input.style.display='block'		
+		el.parentElement.parentElement.remove();parent_input.style.display='block'
 		base_inp.querySelector('input').value=obj
 		save.insertAdjacentHTML('afterend',part_main_object)
 		parent_input.querySelector('button').textContent='Очистить'
 		val.forEach(i=>{
-			child_input.querySelector('button').insertAdjacentHTML('afterend',add_part_feature)			
+			child_input.querySelector('button').insertAdjacentHTML('afterend',add_part_feature)
 			child_input.querySelector('label').textContent=Object.keys(i)[0]
-			for(let j in i){				
+			for(let j in i){
 				i[j].forEach(v=>{
 					child_input.querySelector('.add_part_f').insertAdjacentHTML('beforeend',
 							`<div>
 							<input type="checkbox" name=${v} checked>
-							<label for=${result_word}>${v}</label>
+							<label for=${v}>${v}</label>
 						</div>`)
 				})
 			}

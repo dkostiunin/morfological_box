@@ -1,11 +1,5 @@
 body {text-align: center;margin: 10;font-family: Verdana, Arial, sans-serif;font-size: 16px;}
 
-h1 {font-size: 48px;text-align: center;}
-
-.text {min-height: 300px;min-width: 500px;border: solid;border-width: 1px;text-align: left;
-	-webkit-box-shadow: 6px 10px 9px 0px rgba(0, 0, 0, 0.75);-moz-box-shadow: 6px 10px 9px 0px rgba(0, 0, 0, 0.75);
-	box-shadow: 6px 10px 9px 0px rgba(0, 0, 0, 0.75);
-}
 .add_part_f{display: flex;flex-direction: row;flex-wrap: wrap;border: double; margin: 1rem;border-radius: 1rem; padding: 0.5rem;}
 input, .add_part_f_label{max-width:90%}
 
@@ -26,3 +20,5 @@ button{cursor: pointer;}
 .child_close_but{position: absolute;bottom: -1rem; left: -1rem;}
 
 a{color: white;}
+
+#add_o{position: absolute;margin-left:auto;margin-right:auto;left: 0;right: 0;top: 30%;border:groove;background-color: burlywood;font-size: large; max-width: fit-content;padding: 0.5rem;border-radius: 0.5rem;}

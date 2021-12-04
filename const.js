@@ -22,7 +22,9 @@ show_r=`<div id="show_room">
 	
 menu=`<div id="show_m">
 		<button id="but_close" class="buttons" onclick="closes(this)">❌</button>
-		<p><a href="https://diod.tk/orfo/terms.html">Политика конфиденциальности</a></p>
-		<p><a href="https://diod.tk/orfo/policy.html">Пользовательское соглашение</a></p>
+		<p><a href="https://igra.cf/terms.html">Политика конфиденциальности</a></p>
+		<p><a href="https://igra.cf/policy.html">Пользовательское соглашение</a></p>
 		<p style="color: white">Сохраненные объекты:</p>
-	</div>`
+	</div>`,
+
+add_obj=`<div id="add_o">Сохранено</div>`
